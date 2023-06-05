@@ -1,0 +1,1 @@
+"type Example {\n  pods: [String]\n  jobs: [Example_Jobs]\n}"

@@ -1,0 +1,67 @@
+{
+  "schemaComposer": "SchemaComposer",
+  "_gqType": "Example",
+  "_gqcFields": {
+    "pods": {
+      "type": {
+        "ofType": {
+          "schemaComposer": "SchemaComposer",
+          "_gqType": "String",
+          "_gqcIsModified": false
+        }
+      }
+    },
+    "jobs": {
+      "type": {
+        "ofType": {
+          "schemaComposer": "SchemaComposer",
+          "_gqType": "Example_Jobs",
+          "_gqcFields": {
+            "name": {
+              "type": {
+                "schemaComposer": "SchemaComposer",
+                "_gqType": "String",
+                "_gqcIsModified": false
+              }
+            },
+            "env": {
+              "type": {
+                "schemaComposer": "SchemaComposer",
+                "_gqType": "Example_Jobs_Env",
+                "_gqcFields": {
+                  "PORT": {
+                    "type": {
+                      "schemaComposer": "SchemaComposer",
+                      "_gqType": "String",
+                      "_gqcIsModified": false
+                    }
+                  },
+                  "WORD": {
+                    "type": {
+                      "schemaComposer": "SchemaComposer",
+                      "_gqType": "String",
+                      "_gqcIsModified": false
+                    }
+                  }
+                },
+                "_gqcInterfaces": [],
+                "_gqcIsModified": false
+              }
+            },
+            "schedule": {
+              "type": {
+                "schemaComposer": "SchemaComposer",
+                "_gqType": "Float",
+                "_gqcIsModified": false
+              }
+            }
+          },
+          "_gqcInterfaces": [],
+          "_gqcIsModified": false
+        }
+      }
+    }
+  },
+  "_gqcInterfaces": [],
+  "_gqcIsModified": false
+}

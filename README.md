@@ -6,16 +6,24 @@ Reconciliation is a versatile tool for maintaining configuration in distributed 
 
 *Includes AI generated code content*
 
-## server
+## reconciliation examples
 
-## schemas
+### zero-reconcile
 
-## reconcile
+### file-reconcile
 
-## k3d
+### db-reconcile
+
+### graphql-reconcile
+
+### git-reconcile
+
+## reconcilers
+
+## stores
 
 ## extras
 
-### containers
+### apps
 
 #### hello-custom

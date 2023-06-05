@@ -11,6 +11,12 @@ dependencies:
   graphql:
     specifier: ^16.6.0
     version: 16.6.0
+  graphql-compose:
+    specifier: ^9.0.10
+    version: 9.0.10(graphql@16.6.0)
+  graphql-compose-json:
+    specifier: ^6.2.0
+    version: 6.2.0(graphql-compose@9.0.10)
   graphql-yoga:
     specifier: ^3.9.1
     version: 3.9.1(graphql@16.6.0)
@@ -223,6 +229,31 @@ packages:
     resolution: {integrity: sha512-5jOCVXADYNuRkKFzNJ0dCCewsZiYo0dz8QNYljkOpFC6r2U4OBmKtvm/Tsuh4w1YYdDqDb31a8TVhBJ2OJKdqQ==}
     dependencies:
       punycode: 1.4.1
+    dev: false
+
+  /graphql-compose-json@6.2.0(graphql-compose@9.0.10):
+    resolution: {integrity: sha512-EfY6VPu6/Rah8xCEXa7WT1W/Hyd+wJZ08HFRDtEsZx3z/WRguDXDGi0kppGXWNQDc66PtEMfWvhDDsM/J8kiRQ==}
+    peerDependencies:
+      graphql-compose: ^7.0.4 || ^8.0.0 || ^9.0.0
+    dependencies:
+      graphql-compose: 9.0.10(graphql@16.6.0)
+    dev: false
+
+  /graphql-compose@9.0.10(graphql@16.6.0):
+    resolution: {integrity: sha512-UsVoxfi2+c8WbHl2pEB+teoRRZoY4mbWBoijeLDGpAZBSPChnqtSRjp+T9UcouLCwGr5ooNyOQLoI3OVzU1bPQ==}
+    peerDependencies:
+      graphql: ^14.2.0 || ^15.0.0 || ^16.0.0
+    dependencies:
+      graphql: 16.6.0
+      graphql-type-json: 0.3.2(graphql@16.6.0)
+    dev: false
+
+  /graphql-type-json@0.3.2(graphql@16.6.0):
+    resolution: {integrity: sha512-J+vjof74oMlCWXSvt0DOf2APEdZOCdubEvGDUAlqH//VBYcOYsGgRW7Xzorr44LvkjiuvecWc8fChxuZZbChtg==}
+    peerDependencies:
+      graphql: '>=0.8.0'
+    dependencies:
+      graphql: 16.6.0
     dev: false
 
   /graphql-yoga@3.9.1(graphql@16.6.0):
