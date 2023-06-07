@@ -1,6 +1,4 @@
-import threading # needed for threading
 import time # used to wait
-import curses # used for displaying log on one portion of screen, prompt on other
 
 expected = {
 	"key": "00000000"
@@ -8,29 +6,42 @@ expected = {
 
 current = expected.copy()
 
-def main(stdscr):
-	while true:
-		print('Starting...')
-		print('Key: ' + current.get('key'))
-		userin = input('> ')
-		# user input can be used to generate binary to replace state key
+def main():
+	counter = 0
+	print('Key set: ' + current.get('key'))
+	while True:
+		wellness()
+		time.sleep(3)
+		wellness()
+		time.sleep(3)
+		counter += 1
+		if counter == 3:
+			current['key'] = '11111111'
+			counter = 0
 
-def wellness(stdscr):
-	while true:
-		print('Checking state wellness...')
-		if current.get('key') == "00000000":
-			print('Checks clear')
-		else:
-			print('current.foo.bar state changed blah blah') # diff check dynamically
-			# correct state
-		time.sleep(5)
+def wellness():
+	print('Checking state wellness...')
+	if current == expected:
+		print('-> Checks clean')
+	else:
+		dc = diffCheck().copy()
+		print('-> State changed')
+		for key, (v1, v2) in dc.items():
+			print(f'   {key}: {v1} != {v2}')
+		reconcile()
 
-# generate binary
-def generate_binary(len):
-	binary = ""
-	for _ in range(len):
-		binary += str(random.randint(0,1))
-	return binary
+def diffCheck():
+	diffPairs = {}
+	for key in current:
+		if key in expected and current[key] != expected[key]:
+			diffPairs[key] = (current[key], expected[key])
+	return diffPairs
+
+def reconcile():
+	print('Resetting state...')
+	time.sleep(1)
+	current['key'] = '00000000'
+	print('-> State reset')
 
 if __name__ == '__main__':
-	#main(stdscr)
+	main()
